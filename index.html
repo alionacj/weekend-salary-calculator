@@ -12,22 +12,47 @@
   </header>
   <main>
     <h2>Add Employee</h2>
-      <form>
-        <input></input>
-        <input></input>
-        <button>Submit</button>
+      <form id="form">
+        <input required id="firstNameInput" placeholder="First Name" type="text"></input>
+        <input required id="lastNameInput" placeholder="Last Name" type="text"></input>
+        <input required id="idNumberInput" placeholder="ID Number" type="number"></input>
+        <input required id="jobTitleInput" placeholder="Job Title" type="text"></input>
+        <input required id="annualSalaryInput" placeholder="Annual Salary" type="number"></input>
+        <button onclick="addEmployee(event)">Submit</button>
       </form>
     <h2>Employees</h2>
+      <table>
+        <thead>
+          <tr>
+            <td>FIRST NAME</td>
+            <td>LAST NAME</td>
+            <td>ID NUMBER</td>
+            <td>JOB TITLE</td>
+            <td id="remover">ANNUAL SALARY</td>
+            <td>FIRE EMPLOYEE</td>
+          </tr>
+        </thead>
+        <tbody id="table">
+          <tr>
+            <td>sample</td>
+            <td>sample</td>
+            <td>sample</td>
+            <td>sample</td>
+            <td>sample</td>
+            <td><button onclick="deleteEmployee(event)">❌</button></td>
+          </tr>
+        </tbody>
+      </table>
   </main>
   <footer>
-    <p>Total Monthly</p>
+    <span>Total Monthly:</span>
+    <span id="counter">0</span>
   </footer>
 </body>
 </html>
 
 
-<!-- 
-  MY PLAN
+<!--  MY PLAN
 
   preview stage
     (X) read thru asn
@@ -54,37 +79,32 @@
     push & submit
  -->
 
-<!--
-  ASSIGNMENT REQUIREMENTS
+<!-- ASSIGNMENT REQUIREMENTS
+  
 
-  () create form 
+  (X) create form 
     - five inputs: first name, last name, ID number, job title, annual salary
+      (X) form element
 
-  () submit button, on click:
-    - new employee row added to table
-    - footer's total monthly cost updated.
-    - form inputs cleared
-    - If the total monthly cost exceeds $20,000, apply an over-budget CSS class to the footer element.
+  (X) submit button, on click:
+    (X) new employee row added to table
+    (X) footer's total monthly cost updated.
+    (X) form inputs cleared
+    (X) If the total monthly cost exceeds $20,000, apply an over-budget CSS class to the footer element.
 
-  () if total monthly cost > $20,000
-    - apply over-budget CSS class to footer element
-      - over-budget class class provide visual indication that monthly cost exceeded
-
-  () create "Delete" button that removes an employee
+  (X) create "Delete" button that removes an employee
 
   total monthly cost not needed to updated upon deletions
+-->
 
-
-  STRETCH GOALS
-
+<!-- STRETCH GOALS
   () add styling / extra functionality
 
   () upon employee is deletion, update the footer's monthly cost
     - HINT: need to figure out which employee. tricky!
 -->
 
-<!-- 
-  FOR THE TESTS TO WORK:
+<!-- FOR THE TESTS TO WORK:
 
   submit button must have:
     <button data-testid="submitButton">
