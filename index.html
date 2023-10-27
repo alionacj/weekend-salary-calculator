@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
   <title>Salary Calculator</title>
 </head>
 <body>
@@ -18,3 +19,52 @@
   </footer>
 </body>
 </html>
+
+<!--
+  ASSIGNMENT REQUIREMENTS
+
+  () create form 
+    - five inputs: first name, last name, ID number, job title, annual salary
+
+  () submit button, on click:
+    - new employee row added to table
+    - footer's total monthly cost updated.
+    - form inputs cleared
+    - If the total monthly cost exceeds $20,000, apply an over-budget CSS class to the footer element.
+
+  () if total monthly cost > $20,000
+    - apply over-budget CSS class to footer element
+      - over-budget class class provide visual indication that monthly cost exceeded
+
+  () create "Delete" button that removes an employee
+
+  total monthly cost not needed to updated upon deletions
+
+
+  STRETCH GOALS
+
+  () add styling / extra functionality
+
+  () upon employee is deletion, update the footer's monthly cost
+    - HINT: need to figure out which employee. tricky!
+
+-->
+
+<!-- 
+  FOR THE TESTS TO WORK:
+
+  submit button must have:
+    <button data-testid="submitButton">
+      Submit
+    </button>
+
+  form inputs must have exact attributes:
+    data-testid="firstNameInput"
+    data-testid="lastNameInput"
+    data-testid="idInput"
+    data-testid="titleInput"
+    data-testid="annualSalaryInput"
+
+  must use <table> element, each employee a single <tr>
+  total monthly cost must be rendered inside <footer> element
+-->
