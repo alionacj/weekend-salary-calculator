@@ -15,10 +15,10 @@
       <form id="form">
         <input required id="firstNameInput" placeholder="First Name" type="text"></input>
         <input required id="lastNameInput" placeholder="Last Name" type="text"></input>
-        <input required id="idNumberInput" placeholder="ID Number" type="number"></input>
-        <input required id="jobTitleInput" placeholder="Job Title" type="text"></input>
+        <input required id="idInput" placeholder="ID Number" type="number"></input>
+        <input required id="titleInput" placeholder="Job Title" type="text"></input>
         <input required id="annualSalaryInput" placeholder="Annual Salary" type="number"></input>
-        <button onclick="addEmployee(event)">Submit</button>
+        <button onclick="addEmployee(event)" data-testid="submitButton">Submit</button>
       </form>
     <h2>Employees</h2>
       <table>
@@ -33,14 +33,6 @@
           </tr>
         </thead>
         <tbody id="table">
-          <tr>
-            <td>sample</td>
-            <td>sample</td>
-            <td>sample</td>
-            <td>sample</td>
-            <td>sample</td>
-            <td><button onclick="deleteEmployee(event)">❌</button></td>
-          </tr>
         </tbody>
       </table>
   </main>
@@ -65,7 +57,7 @@
     (-) ask questions on identified challenges
     () whiteboarding/planning
     (X) project setup, folders and files
-    () make a plan to connect with others in cohort over the weekend
+    (-) make a plan to connect with others in cohort over the weekend
 
   go time
     commit often
@@ -105,7 +97,6 @@
 -->
 
 <!-- FOR THE TESTS TO WORK:
-
   submit button must have:
     <button data-testid="submitButton">
       Submit

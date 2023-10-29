@@ -16,8 +16,8 @@ function addEmployee(event) {
     // get input data
     let formFirstName = document.getElementById('firstNameInput').value
     let formLastName = document.getElementById('lastNameInput').value
-    let formIdNumber = document.getElementById('idNumberInput').value
-    let formJobTitle = document.getElementById('jobTitleInput').value
+    let formIdNumber = document.getElementById('idInput').value
+    let formJobTitle = document.getElementById('titleInput').value
     let formAnnualSalary = document.getElementById('annualSalaryInput').value
 
     // store input in table
@@ -47,8 +47,8 @@ function addEmployee(event) {
     // clear form inputs
     document.getElementById('firstNameInput').value = '';
     document.getElementById('lastNameInput').value = '';
-    document.getElementById('idNumberInput').value = '';
-    document.getElementById('jobTitleInput').value = '';
+    document.getElementById('idInput').value = '';
+    document.getElementById('titleInput').value = '';
     document.getElementById('annualSalaryInput').value = '';
 }
 
@@ -58,8 +58,8 @@ function deleteEmployee (event) {
 
     // reflects in monthly total
         // take the annual salary of the clicked tr
-        let whatIsThis = event.target.parentElement.parentElement.getElementById('remover');
-        console.log(whatIsThis)
+        // let whatIsThis = event.target.parentElement.parentElement.getElementById('remover');
+        // console.log(whatIsThis)
 
     // remove salary from total
 
@@ -71,9 +71,4 @@ function deleteEmployee (event) {
 
     // removes <tr>
     event.target.parentElement.parentElement.remove();
-}
-
-// is this necessary?
-function overBudget () {
-    console.log('overBudget called.');
 }
