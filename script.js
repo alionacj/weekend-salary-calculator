@@ -6,6 +6,7 @@ function startUp () {
  
 let totalSalary = 0;
 
+
 // submit button press
 function addEmployee(event) {
 
@@ -29,7 +30,7 @@ function addEmployee(event) {
             <td>${formLastName}</td>
             <td>${formIdNumber}</td>
             <td>${formJobTitle}</td>
-            <td>${formAnnualSalary}</td>
+            <td id="salary">${formAnnualSalary}</td>
             <td><button onclick="deleteEmployee(event)">❌</button></td>
         </tr>
     `
@@ -52,14 +53,19 @@ function addEmployee(event) {
     document.getElementById('annualSalaryInput').value = '';
 }
 
+
 // delete button press
 function deleteEmployee (event) {
     console.log('deleteEmployee called.');
 
     // reflects in monthly total
-        // take the annual salary of the clicked tr
-        // let whatIsThis = event.target.parentElement.parentElement.getElementById('remover');
-        // console.log(whatIsThis)
+        // store annual salary of deleting element
+    let targetParent = event.target.parentElement.parentElement.children;
+    for (targetChild of targetParent) {
+        if (targetChild.id === 'salary')
+            totalSalary -= Number(targetChild.innerHTML)
+        document.getElementById('counter').innerHTML = totalSalary/12
+    }
 
     // remove salary from total
 
