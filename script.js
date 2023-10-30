@@ -1,13 +1,13 @@
-startUp();
-
 function startUp () {
     console.log('IT\S ALIIIIIIIIVE!');
 }
- 
+startUp();
+
+
 let totalSalary = 0;
 
 
-// submit button press
+// submit button
 function addEmployee(event) {
 
     // immediate actions
@@ -15,16 +15,15 @@ function addEmployee(event) {
     console.log('addEmployee called.');
 
     // get input data
-    let formFirstName = document.getElementById('firstNameInput').value
-    let formLastName = document.getElementById('lastNameInput').value
-    let formIdNumber = document.getElementById('idInput').value
-    let formJobTitle = document.getElementById('titleInput').value
-    let formAnnualSalary = document.getElementById('annualSalaryInput').value
+    let formFirstName = document.getElementById('firstNameInput').value;
+    let formLastName = document.getElementById('lastNameInput').value;
+    let formIdNumber = document.getElementById('idInput').value;
+    let formJobTitle = document.getElementById('titleInput').value;
+    let formAnnualSalary = document.getElementById('annualSalaryInput').value;
 
     // store input in table
-    let table = document.getElementById('table');
-    table.innerHTML +=
-    `
+    let newEmployee = 
+        `
         <tr>
             <td>${formFirstName}</td>
             <td>${formLastName}</td>
@@ -33,11 +32,15 @@ function addEmployee(event) {
             <td id="salary">${formAnnualSalary}</td>
             <td><button onclick="deleteEmployee(event)">❌</button></td>
         </tr>
-    `
+        `;
+    let table = document.getElementById('table');
+    table.innerHTML += newEmployee; //adds to table
 
     // update total salary
-    totalSalary += Number(formAnnualSalary)
-    document.getElementById('counter').innerHTML = totalSalary/12
+    totalSalary += Number(formAnnualSalary);
+    let totalMonthlySalary = totalSalary/12;
+    let roundedMonthly = Math.floor(totalMonthlySalary * 100) / 100 //rounds value
+    document.getElementById('counter').textContent = roundedMonthly; //updates footer
 
     // over-budget indicator
     let footer = document.querySelector('footer');
@@ -56,21 +59,20 @@ function addEmployee(event) {
 
 // delete button press
 function deleteEmployee (event) {
+
+    // immediate action
     console.log('deleteEmployee called.');
 
     // reflects in monthly total
-        // store annual salary of deleting element
     let targetParent = event.target.parentElement.parentElement.children;
     for (targetChild of targetParent) {
         if (targetChild.id === 'salary')
             totalSalary -= Number(targetChild.innerHTML)
-        document.getElementById('counter').innerHTML = totalSalary/12
+            document.getElementById('counter').innerHTML = totalSalary/12
     }
 
-    console.log(totalSalary);
-
     // make red text go away if below 20k
-    if (totalSalary <= 20000) {
+    if (totalSalary/12 <= 20000) {
         let footer = document.querySelector('footer');
         footer.classList.remove('over-budget');
     }
