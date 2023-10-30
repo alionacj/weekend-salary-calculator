@@ -13,11 +13,11 @@
   <main>
     <h2>Add Employee</h2>
       <form id="form">
-        <input required id="firstNameInput" placeholder="First Name" type="text"></input>
-        <input required id="lastNameInput" placeholder="Last Name" type="text"></input>
-        <input required id="idInput" placeholder="ID Number" type="number"></input>
-        <input required id="titleInput" placeholder="Job Title" type="text"></input>
-        <input required id="annualSalaryInput" placeholder="Annual Salary" type="number"></input>
+        <input required id="firstNameInput" placeholder="First Name" type="text"  data-testid="firstNameInput"></input>
+        <input required id="lastNameInput" placeholder="Last Name" type="text" data-testid="lastNameInput"></input>
+        <input required id="idInput" placeholder="ID Number" type="number" data-testid="idInput"></input>
+        <input required id="annualSalaryInput" placeholder="Annual Salary" type="number" data-testid="annualSalaryInput"></input>
+        <input required id="titleInput" placeholder="Job Title" type="text" data-testid="titleInput"></input>
         <button onclick="addEmployee(event)" data-testid="submitButton">Submit</button>
       </form>
     <h2>Employees</h2>
@@ -45,7 +45,6 @@
 
 
 <!--  MY PLAN
-
   preview stage
     (X) read thru asn
     (X) identify features & concepts needing review
@@ -72,8 +71,6 @@
  -->
 
 <!-- ASSIGNMENT REQUIREMENTS
-  
-
   (X) create form 
     - five inputs: first name, last name, ID number, job title, annual salary
       (X) form element

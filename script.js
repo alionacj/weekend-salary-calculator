@@ -42,7 +42,7 @@ function addEmployee(event) {
     // over-budget indicator
     let footer = document.querySelector('footer');
     if (totalSalary/12 > 20000) {
-        footer.classList.add('red-text');
+        footer.classList.add('over-budget');
     }
 
     // clear form inputs
@@ -67,12 +67,12 @@ function deleteEmployee (event) {
         document.getElementById('counter').innerHTML = totalSalary/12
     }
 
-    // remove salary from total
+    console.log(totalSalary);
 
     // make red text go away if below 20k
     if (totalSalary <= 20000) {
         let footer = document.querySelector('footer');
-        footer.classList.remove('red-text');
+        footer.classList.remove('over-budget');
     }
 
     // removes <tr>
